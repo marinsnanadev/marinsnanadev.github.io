@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gianna Marins, Desenvolvedora Full-Stack</title>
+  <meta name="description"
+    content="Portfólio de Gianna Marins, desenvolvedora full-stack. Projetos, arquitetura e o processo por trás de cada um.">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23121212'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23ffffff' text-anchor='middle' font-style='italic'%3EN%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..600;1,9..144,340..600&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <noscript>
+    <style>
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Gianna Marins</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link" data-nav>Início</a>
+        <a href="#about" class="nav-link" data-nav>Sobre</a>
+        <a href="#projects" class="nav-link" data-nav>Projetos</a>
+        <a href="#skills" class="nav-link" data-nav>Skills</a>
+        <a href="#contact" class="nav-link" data-nav>Contato</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+        aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <p class="eyebrow reveal">Portfólio — desenvolvimento web</p>
+        <h1 class="hero-title reveal">
+          Construo software pensando<br>
+          no que acontece <em>depois</em><br>
+          do clique também.
+        </h1>
+        <p class="hero-subtitle reveal">
+          Sou Gianna Marins (Nana), desenvolvedora full-stack com foco em front-end e
+          experiência em produtos digitais de mobilidade urbana. Transformo ideias
+          em interfaces claras, responsivas e agradáveis de usar, com atenção ao
+          que acontece por trás delas, do primeiro clique à API.
+        </p>
+
+        <ul class="hero-meta reveal">
+          <li>São Paulo — Brasil</li>
+          <li>JavaScript · React · FastAPI · SQL</li>
+          <li class="hero-meta-status"><span class="status-dot" aria-hidden="true"></span>Aberta a novas
+            oportunidades</li>
+        </ul>
+
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn btn--solid">Ver projetos</a>
+          <a href="#contact" class="btn btn--line">Fale comigo →</a>
+        </div>
+      </div>
+
+      <figure class="hero-photo reveal">
+        <picture>
+          <source srcset="./assets/img/nana-portrait.jpg">
+          <img src="./assets/img/nana-portrait.jpg" alt="Retrato de Nana Marins, em preto e branco." class="hero-photo-img"
+            width="300" height="500" fetchpriority="high">
+        </picture>
+      </figure>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="section-head">
+        <p class="eyebrow reveal">Sobre</p>
+        <h2 class="section-title reveal">Quem escreve o código</h2>
+      </div>
+
+      <div class="about-body">
+        <p class="about-lead reveal">
+          Sou uma desenvolvedora full-stack com foco em front-end e
+          mais de um ano de experiência em produtos digitais de mobilidade
+          urbana. Gosto de criar interfaces que organizam a informação, tornam
+          os fluxos mais naturais e funcionam bem em diferentes telas.
+        </p>
+        <p class="about-paragraph reveal">
+          Tenho experiência prática com React, TypeScript, JavaScript, Angular,
+          HTML e CSS, além de back-end com Node.js e Python. Me interesso por
+          componentização, acessibilidade, performance e pela conexão entre uma
+          boa interface e uma API bem estruturada. Fora do trabalho, mantenho
+          projetos pessoais full-stack para explorar arquitetura, autenticação e
+          testes automatizados. Inglês fluente para times e documentação técnica.
+        </p>
+
+        <div class="quals reveal">
+          <div class="qual-row">
+            <span class="qual-date">2023—2027</span>
+            <div class="qual-content">
+              <h3>Graduação em Engenharia de Software</h3>
+              <p>Cruzeiro do Sul</p>
+            </div>
+          </div>
+          <div class="qual-row">
+            <span class="qual-date">2023—2025</span>
+            <div class="qual-content">
+              <h3>Trainee, Analista de Desenvolvimento de Sistemas</h3>
+              <p>Tupi Mobilidade</p>
+            </div>
+          </div>
+          <div class="qual-row">
+            <span class="qual-date">Certificações</span>
+            <div class="qual-content">
+              <h3>Formação complementar</h3>
+              <p>Jornada DEV (Escola Britânica de Artes Criativas e Tecnologia) · Desenvolvimento Web (Rocketseat) ·
+                Trilha de Front-end (Elas + Tech)</p>
+            </div>
+          </div>
+          <div class="qual-row">
+            <span class="qual-date">Idiomas</span>
+            <div class="qual-content">
+              <h3>Inglês fluente · Francês e Espanhol intermediário</h3>
+            </div>
+          </div>
+        </div>
+        <span class="margin-note margin-note--quals" aria-hidden="true">ainda cursando — na prática, aprendo mais
+          resolvendo bug em produção.</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+      <div class="section-head">
+        <p class="eyebrow reveal">Projetos</p>
+        <h2 class="section-title reveal">O que eu construí</h2>
+        <p class="section-desc reveal">Quatro estudos de caso — do front-end à arquitetura que ninguém vê.</p>
+      </div>
+
+      <div class="project-list">
+
+        <!-- VIOLET -->
+        <article class="project reveal">
+          <div class="project-media">
+            <video class="project-video" autoplay muted loop playsinline preload="auto"
+              aria-label="Demonstração em vídeo da loja virtual VIOLET">
+              <source src="./assets/mp4/violet-ecommerce.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-body">
+            <p class="project-index">Estudo 01 / 04</p>
+            <div class="project-top">
+              <h3>VIOLET</h3>
+              <span class="project-status">em desenvolvimento</span>
+            </div>
+            <p class="project-desc">Loja virtual full-stack com autenticação de usuários (JWT + hash de
+              senha via PBKDF2), carrinho de compras persistente e checkout com
+              validação e cálculo do pedido no servidor — evitando manipulação de
+              preços pelo cliente. Conta com página de conta do cliente com
+              histórico de pedidos, e API e fluxos principais cobertos por testes
+              automatizados (pytest e Jest).</p>
+            <p class="project-stack">Stack — React · FastAPI · SQLAlchemy · JWT · Pytest</p>
+            <a href="https://github.com/marinsnanadev/ecommerce" class="link-arrow">Repositório →</a>
+          </div>
+        </article>
+
+        <!-- Road Podglifos -->
+        <article class="project project--reverse reveal">
+          <div class="project-media">
+            <video class="project-video" autoplay muted loop playsinline preload="auto"
+              aria-label="Demonstração em vídeo do site do Road Podglifos">
+              <source src="./assets/mp4/roadpod.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-body">
+            <p class="project-index">Estudo 02 / 04</p>
+            <div class="project-top">
+              <h3>Road Podglifos</h3>
+              <span class="project-status">em desenvolvimento</span>
+            </div>
+            <p class="project-desc">Site do Road Podglifos, podcast de análise de mangá e anime. Feito
+              em React, com identidade visual própria (glow, glassmorphism,
+              tipografia customizada) e animações leves via GSAP.</p>
+            <p class="project-stack">Stack — React · GSAP · CSS</p>
+            <a href="https://github.com/marinsnanadev/roadpod" class="link-arrow">Repositório →</a>
+          </div>
+        </article>
+
+        <!-- Games Dashboard -->
+        <article class="project reveal">
+          <div class="project-media">
+            <video class="project-video" autoplay muted loop playsinline preload="auto"
+              aria-label="Demonstração em vídeo do Games Dashboard">
+              <source src="./assets/mp4/games-dashboard.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-body">
+            <p class="project-index">Estudo 03 / 04</p>
+            <div class="project-top">
+              <h3>Games Dashboard</h3>
+              <span class="project-status">em desenvolvimento</span>
+            </div>
+            <p class="project-desc">Dashboard de análise de dados de games com insights gerados por IA,
+              usando a RAWG API e a Gemini API. O backend agrega os dados (contagem
+              por ano, nota média, ano de pico) antes de enviar ao modelo — que só
+              narra o padrão em linguagem natural, sem fazer contas sozinho, o que
+              evita números alucinados. Respostas ficam em cache por 30 min para
+              economizar chamadas do free tier.</p>
+            <p class="project-stack">Stack — React · Vite · Express · RAWG API · Gemini API</p>
+            <a href="https://github.com/marinsnanadev/games-dashboard" class="link-arrow">Repositório →</a>
+          </div>
+        </article>
+
+        <!-- LiveDesk -->
+        <article class="project project--reverse reveal">
+          <div class="project-media">
+            <video class="project-video" autoplay muted loop playsinline preload="auto"
+              aria-label="Demonstração em vídeo do LiveDesk">
+              <source src="./assets/mp4/livedesk.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-body">
+            <p class="project-index">Estudo 04 / 04</p>
+            <div class="project-top">
+              <h3>LiveDesk</h3>
+              <span class="project-status">em desenvolvimento</span>
+            </div>
+            <p class="project-desc">Chat de suporte ao vivo com presença em tempo real, indicador de
+              "digitando…" e histórico persistido — um mini Intercom/Zendesk. O
+              núcleo do projeto é a separação entre estado durável (mensagens,
+              salvas no banco) e estado ao vivo (presença e digitação, mantidos só
+              em memória no servidor e nunca persistidos), respondendo à pergunta
+              clássica de entrevista: como lidar com múltiplos clientes conectados
+              via WebSocket e o que acontece quando um deles cai.</p>
+            <p class="project-stack">Stack — FastAPI · WebSockets · React · SQLAlchemy · Pytest</p>
+            <a href="https://github.com/marinsnanadev/livedesk" class="link-arrow">Repositório →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+      <div class="section-head">
+        <p class="eyebrow reveal">Skills</p>
+        <h2 class="section-title reveal">Ferramentas que eu uso</h2>
+      </div>
+
+      <div class="skills-table reveal">
+        <div class="skills-row">
+          <span class="skills-label">Front-end</span>
+          <p class="skills-items">React · TypeScript · JavaScript (ES6+) · Angular · HTML5 · CSS3 · Bootstrap</p>
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Back-end</span>
+          <p class="skills-items">Node.js · Python · FastAPI · Express · PHP · REST APIs · WebSockets</p>
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Mobile</span>
+          <p class="skills-items">iOS (Swift / React Native) · Android</p>
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Banco de dados</span>
+          <p class="skills-items">MySQL · MongoDB · SQLAlchemy · SQL Query</p>
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Testes</span>
+          <p class="skills-items">Jest · React Testing Library · Pytest</p>
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Ferramentas &amp; DevOps</span>
+          <p class="skills-items">Git · GitHub · GitHub Actions · Power BI · WordPress</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <p class="eyebrow reveal">Contato</p>
+      <h2 class="contact-title reveal">Vamos conversar?</h2>
+      <p class="contact-desc reveal">
+        Aberta a oportunidades, colaborações e boas conversas sobre código.
+      </p>
+      <a href="mailto:giannamarins@gmail.com" class="contact-email reveal">giannamarins@gmail.com</a>
+      <div class="contact-socials reveal">
+        <a href="https://github.com/marinsnanadev" class="social-link">GitHub</a>
+        <span class="contact-slash" aria-hidden="true">/</span>
+        <a href="https://www.linkedin.com/in/gianna-marins-734944234/" class="social-link">LinkedIn</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-colophon">Feito à mão, sem template — HTML, CSS e JavaScript puro. Tipografia: Fraunces,
+      Instrument Sans e Space Mono. © <span id="year"></span> Nana Marins.</p>
+    <span class="margin-note margin-note--footer" aria-hidden="true">valeu por chegar até aqui.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
