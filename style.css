@@ -732,20 +732,61 @@ em {
    ========================================================= */
 @media (max-width: 980px) {
   .hero {
-    grid-template-columns: 1fr;
+    /* texto à esquerda, foto redonda ao lado do título */
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: clamp(16px, 4vw, 40px);
+    row-gap: 0;
+    padding: 104px clamp(20px, 5vw, 48px) 56px;
+    align-items: start;
+  }
+
+  /* os filhos do texto viram itens do grid do .hero */
+  .hero-text {
+    display: contents;
+  }
+
+  .hero-text > * {
+    grid-column: 1 / -1;
+  }
+
+  .hero-text > .eyebrow {
+    grid-row: 1;
+  }
+
+  .hero-title {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    font-size: clamp(1.6rem, 6.4vw, 3rem);
   }
 
   .hero-photo {
-    order: -1;
-    width: min(100%, 280px);
-    margin: 0 0 32px;
-    justify-self: start;
+    grid-column: 2;
+    grid-row: 2;
+    order: 0;
+    align-self: center;
+    justify-self: end;
+    width: clamp(76px, 22vw, 200px);
+    margin: 0;
   }
 
-  .hero-text {
-    order: -1;
-    padding: 32px 24px 0;
-    max-width: none;
+  .hero-photo-img {
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-position: 50% 22%;
+  }
+
+  .hero-subtitle {
+    grid-row: 3;
+  }
+
+  .hero-meta {
+    grid-row: 4;
+  }
+
+  .hero-actions {
+    grid-row: 5;
   }
 
   .project,
@@ -814,7 +855,4 @@ em {
     align-items: flex-start;
   }
 
-  .hero-photo {
-    width: min(100%, 220px);
-  }
 }
