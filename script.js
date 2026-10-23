@@ -4,6 +4,69 @@ document.getElementById('year').textContent = currentYear;
 // mobile menu
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
+const resumeToggle = document.getElementById('resumeToggle');
+const resumeMenu = document.getElementById('resumeMenu');
+const resumeDownloadStatus = document.getElementById('resumeDownloadStatus');
+
+const closeResumeMenu = (restoreFocus = false) => {
+  resumeMenu.hidden = true;
+  resumeToggle.setAttribute('aria-expanded', 'false');
+  if (restoreFocus) resumeToggle.focus();
+};
+
+resumeToggle.addEventListener('click', () => {
+  const open = resumeToggle.getAttribute('aria-expanded') !== 'true';
+  resumeMenu.hidden = !open;
+  resumeToggle.setAttribute('aria-expanded', String(open));
+});
+
+resumeMenu.querySelectorAll('a[download]').forEach(link => {
+  link.addEventListener('click', async event => {
+    event.preventDefault();
+    resumeDownloadStatus.hidden = true;
+
+    if (window.location.protocol === 'file:') {
+      resumeDownloadStatus.textContent = currentLanguage === 'en'
+        ? 'Downloads are blocked when the page is opened as a local file. Open the website over HTTP or HTTPS and try again.'
+        : 'O navegador bloqueia o download quando a página é aberta como arquivo local. Acesse o site por HTTP ou HTTPS e tente novamente.';
+      resumeDownloadStatus.hidden = false;
+      return;
+    }
+
+    try {
+      const response = await fetch(link.href);
+      if (!response.ok) {
+        throw new Error(`Resume download failed with status ${response.status}.`);
+      }
+
+      const file = await response.blob();
+      const fileUrl = URL.createObjectURL(new Blob([file], { type: 'application/octet-stream' }));
+      const downloadLink = document.createElement('a');
+      downloadLink.href = fileUrl;
+      downloadLink.download = link.download;
+      downloadLink.hidden = true;
+      document.body.append(downloadLink);
+      downloadLink.click();
+      downloadLink.remove();
+      window.setTimeout(() => URL.revokeObjectURL(fileUrl), 60000);
+      closeResumeMenu();
+    } catch (error) {
+      console.error('Could not download the selected resume.', error);
+      resumeDownloadStatus.textContent = currentLanguage === 'en'
+        ? 'Could not download the file. Check your connection and try again.'
+        : 'Não foi possível baixar o arquivo. Verifique sua conexão e tente novamente.';
+      resumeDownloadStatus.hidden = false;
+    }
+  });
+});
+
+document.addEventListener('click', event => {
+  if (!event.target.closest('.resume-dropdown')) closeResumeMenu();
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !resumeMenu.hidden) closeResumeMenu(true);
+});
 
 navToggle && navToggle.addEventListener('click', () => {
   const open = navLinks.classList.toggle('open');
@@ -65,6 +128,8 @@ const translations = {
   heroLocation: 'São Paulo — Brazil',
   heroProjects: 'View projects',
   heroContact: 'Get in touch →',
+  resumeButton: 'Resume',
+  resumeDownload: 'Download resume',
   portraitAlt: 'Black-and-white portrait of Gianna Marins.',
   aboutEyebrow: 'About',
   aboutTitle: 'The person behind the code',
@@ -192,6 +257,12 @@ const setLanguage = language => {
   descriptionMeta.setAttribute('content', language === 'en'
     ? 'Gianna Marins, Junior Full-Stack Developer (React, TypeScript, Python/FastAPI). Live projects with tests, CI, and clear architectural decisions.'
     : 'Gianna Marins, desenvolvedora Full Stack Júnior (React, TypeScript, Python/FastAPI). Projetos no ar com testes, CI e decisões de arquitetura explicadas.');
+
+  if (!resumeDownloadStatus.hidden) {
+    resumeDownloadStatus.textContent = language === 'en'
+      ? 'Could not download the file. Open the website online and try again.'
+      : 'Não foi possível baixar o arquivo. Acesse o site online e tente novamente.';
+  }
 
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.dataset.i18n;

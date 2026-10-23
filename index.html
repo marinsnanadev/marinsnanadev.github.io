@@ -42,6 +42,26 @@
         <a href="#contact" class="nav-link" data-nav data-i18n="navContact">Contato</a>
       </nav>
       <div class="nav-tools">
+        <div class="resume-dropdown">
+          <button class="nav-tool resume-toggle" id="resumeToggle" type="button"
+            aria-label="Baixar currículo" data-i18n-aria="resumeDownload"
+            aria-haspopup="true" aria-expanded="false" aria-controls="resumeMenu">
+            <svg class="resume-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"></path>
+            </svg>
+            <span data-i18n="resumeButton">Currículo</span>
+            <svg class="resume-chevron" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="m4 6 4 4 4-4"></path>
+            </svg>
+          </button>
+          <div class="resume-menu" id="resumeMenu" hidden>
+            <a href="./assets/curriculo/Gianna_Desenvolvedora_Full_Stack.pdf"
+              download="Gianna_Marins_Curriculo_PT.pdf">Português (PDF)</a>
+            <a href="./assets/curriculo/Gianna_Full_Stack_Developer_English.pdf"
+              download="Gianna_Marins_Resume_EN.pdf">English (PDF)</a>
+            <p class="resume-download-status" id="resumeDownloadStatus" role="status" aria-live="polite" hidden></p>
+          </div>
+        </div>
         <button class="nav-tool theme-toggle" id="themeToggle" type="button" aria-label="Ativar modo escuro"
           aria-pressed="false">
           <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true">
