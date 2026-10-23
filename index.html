@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -28,20 +28,35 @@
 
 <body>
 
-  <a class="skip-link" href="#main">Ir para o conteúdo</a>
+  <a class="skip-link" href="#main" data-i18n="skipLink">Ir para o conteúdo</a>
 
   <!-- NAV -->
   <header class="nav" id="nav">
     <div class="nav-inner">
       <a href="#home" class="nav-logo">Gianna Marins</a>
       <nav class="nav-links" id="navLinks">
-        <a href="#home" class="nav-link" data-nav>Início</a>
-        <a href="#about" class="nav-link" data-nav>Sobre</a>
-        <a href="#projects" class="nav-link" data-nav>Projetos</a>
-        <a href="#skills" class="nav-link" data-nav>Skills</a>
-        <a href="#contact" class="nav-link" data-nav>Contato</a>
+        <a href="#home" class="nav-link" data-nav data-i18n="navHome">Início</a>
+        <a href="#about" class="nav-link" data-nav data-i18n="navAbout">Sobre</a>
+        <a href="#projects" class="nav-link" data-nav data-i18n="navProjects">Projetos</a>
+        <a href="#skills" class="nav-link" data-nav data-i18n="navSkills">Skills</a>
+        <a href="#contact" class="nav-link" data-nav data-i18n="navContact">Contato</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+      <div class="nav-tools">
+        <button class="nav-tool theme-toggle" id="themeToggle" type="button" aria-label="Ativar modo escuro"
+          aria-pressed="false">
+          <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+          </svg>
+          <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"></path>
+          </svg>
+        </button>
+        <button class="nav-tool language-toggle" id="languageToggle" type="button"
+          aria-label="Mudar idioma para inglês">EN</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" data-i18n-aria="menuOpen"
+        aria-expanded="false"
         aria-controls="navLinks">
         <span></span><span></span>
       </button>
@@ -53,13 +68,13 @@
     <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-text">
-        <p class="eyebrow reveal">Desenvolvedora Full Stack Júnior</p>
-        <h1 class="hero-title reveal">
+        <p class="eyebrow reveal" data-i18n="heroEyebrow">Desenvolvedora Full Stack Júnior</p>
+        <h1 class="hero-title reveal" data-i18n-html="heroTitle">
           Construo software pensando<br>
           no que acontece <em>depois</em><br>
           do clique também.
         </h1>
-        <p class="hero-subtitle reveal">
+        <p class="hero-subtitle reveal" data-i18n="heroSubtitle">
           Sou a Gianna (Nana). Trabalhei com apps de recarga de veículos elétricos
           na Tupi Mobilidade e hoje construo projetos full stack que vão do React
           ao banco de dados: no ar, com testes automatizados, CI e atenção a
@@ -67,20 +82,21 @@
         </p>
 
         <ul class="hero-meta reveal">
-          <li>São Paulo — Brasil</li>
+          <li data-i18n="heroLocation">São Paulo — Brasil</li>
           <li>React · TypeScript · Python/FastAPI · PostgreSQL</li>
         </ul>
 
         <div class="hero-actions reveal">
-          <a href="#projects" class="btn btn--solid">Ver projetos</a>
-          <a href="#contact" class="btn btn--line">Fale comigo →</a>
+          <a href="#projects" class="btn btn--solid" data-i18n="heroProjects">Ver projetos</a>
+          <a href="#contact" class="btn btn--line" data-i18n="heroContact">Fale comigo →</a>
         </div>
       </div>
 
       <figure class="hero-photo reveal">
         <picture>
           <source srcset="./assets/img/nana-portrait.jpg">
-          <img src="./assets/img/nana-portrait.jpg" alt="Retrato de Gianna Marins, em preto e branco." class="hero-photo-img"
+          <img src="./assets/img/nana-portrait.jpg" alt="Retrato de Gianna Marins, em preto e branco."
+            data-i18n-alt="portraitAlt" class="hero-photo-img"
             width="300" height="500" fetchpriority="high">
         </picture>
       </figure>
@@ -89,12 +105,12 @@
     <!-- ABOUT -->
     <section class="about" id="about">
       <div class="section-head">
-        <p class="eyebrow reveal">Sobre</p>
-        <h2 class="section-title reveal">Quem escreve o código</h2>
+        <p class="eyebrow reveal" data-i18n="aboutEyebrow">Sobre</p>
+        <h2 class="section-title reveal" data-i18n="aboutTitle">Quem escreve o código</h2>
       </div>
 
       <div class="about-body">
-        <p class="about-lead reveal">
+        <p class="about-lead reveal" data-i18n="aboutLead">
           Sou desenvolvedora full stack júnior e comecei a carreira como trainee
           na Tupi Mobilidade, onde passei por front-end, back-end e mobile em
           apps de recarga de veículos elétricos. Gosto de ligar uma interface
@@ -102,7 +118,7 @@
           acontece quando algo falha: um reenvio, uma conexão que cai, um preço
           que mudou.
         </p>
-        <p class="about-paragraph reveal">
+        <p class="about-paragraph reveal" data-i18n="aboutParagraph">
           Na Tupi, construí telas e funcionalidades em React e TypeScript a
           partir de protótipos no Figma, integradas a REST APIs, trabalhei com
           Node.js, MySQL e MongoDB e participei de code reviews em times Scrum e
@@ -114,42 +130,42 @@
 
         <div class="quals reveal">
           <div class="qual-row">
-            <span class="qual-date">2025—hoje</span>
+            <span class="qual-date" data-i18n="qualDateCurrent">2025—hoje</span>
             <div class="qual-content">
-              <h3>Projetos full stack independentes</h3>
+              <h3 data-i18n="qualIndependent">Projetos full stack independentes</h3>
               <p>VIOLET, LiveDesk, PriceWatcher e Games Dashboard</p>
             </div>
           </div>
           <div class="qual-row">
             <span class="qual-date">2023—2025</span>
             <div class="qual-content">
-              <h3>Trainee, Analista de Desenvolvimento de Sistemas</h3>
-              <p>Tupi Mobilidade · dez/2023 a mai/2025</p>
+              <h3 data-i18n="qualTrainee">Trainee, Analista de Desenvolvimento de Sistemas</h3>
+              <p data-i18n="qualTraineeDate">Tupi Mobilidade · dez/2023 a mai/2025</p>
             </div>
           </div>
           <div class="qual-row">
             <span class="qual-date">2023—2027</span>
             <div class="qual-content">
-              <h3>Graduação em Engenharia de Software</h3>
-              <p>Universidade Cruzeiro do Sul · conclusão prevista em set/2027</p>
+              <h3 data-i18n="qualDegree">Graduação em Engenharia de Software</h3>
+              <p data-i18n="qualDegreeDate">Universidade Cruzeiro do Sul · conclusão prevista em set/2027</p>
             </div>
           </div>
           <div class="qual-row">
-            <span class="qual-date">Certificações</span>
+            <span class="qual-date" data-i18n="qualCertifications">Certificações</span>
             <div class="qual-content">
-              <h3>Formação complementar</h3>
-              <p>Jornada DEV (Escola Britânica de Artes Criativas e Tecnologia) · Design Thinking, UX e Metodologias Ágeis (Descomplica) ·
+              <h3 data-i18n="qualAdditional">Formação complementar</h3>
+              <p data-i18n="qualAdditionalDetails">Jornada DEV (Escola Britânica de Artes Criativas e Tecnologia) · Design Thinking, UX e Metodologias Ágeis (Descomplica) ·
                 Desenvolvimento Web (Rocketseat) · Trilha de Front-end (Elas + Tech)</p>
             </div>
           </div>
           <div class="qual-row">
-            <span class="qual-date">Idiomas</span>
+            <span class="qual-date" data-i18n="qualLanguages">Idiomas</span>
             <div class="qual-content">
-              <h3>Inglês fluente · Francês e Espanhol intermediário</h3>
+              <h3 data-i18n="qualLanguageDetails">Inglês fluente · Francês e Espanhol intermediário</h3>
             </div>
           </div>
         </div>
-        <span class="margin-note margin-note--quals" aria-hidden="true">ainda cursando — na prática, aprendo mais
+        <span class="margin-note margin-note--quals" aria-hidden="true" data-i18n="aboutNote">ainda cursando — na prática, aprendo mais
           resolvendo bug em produção.</span>
       </div>
     </section>
@@ -157,9 +173,9 @@
     <!-- PROJECTS -->
     <section class="projects" id="projects">
       <div class="section-head">
-        <p class="eyebrow reveal">Projetos</p>
-        <h2 class="section-title reveal">O que eu construí</h2>
-        <p class="section-desc reveal">Cinco projetos, do front-end às decisões de arquitetura que ninguém vê.</p>
+        <p class="eyebrow reveal" data-i18n="projectsEyebrow">Projetos</p>
+        <h2 class="section-title reveal" data-i18n="projectsTitle">O que eu construí</h2>
+        <p class="section-desc reveal" data-i18n="projectsDescription">Cinco projetos, do front-end às decisões de arquitetura que ninguém vê.</p>
       </div>
 
       <div class="project-list">
@@ -168,32 +184,32 @@
         <article class="project reveal">
           <div class="project-media">
             <video class="project-video" autoplay muted loop playsinline preload="metadata"
-              aria-label="Demonstração em vídeo da loja virtual VIOLET">
+              aria-label="Demonstração em vídeo da loja virtual VIOLET" data-i18n-aria="violetVideoAlt">
               <source src="./assets/mp4/violet-mp4.mp4" type="video/mp4">
             </video>
           </div>
           <div class="project-body">
-            <p class="project-index">Projeto 01 / 05</p>
+            <p class="project-index" data-i18n="projectIndex1">Projeto 01 / 05</p>
             <div class="project-top">
               <h3>VIOLET</h3>
-              <span class="project-status">no ar</span>
+              <span class="project-status" data-i18n="statusLive">no ar</span>
             </div>
-            <p class="project-lead">E-commerce full stack onde o servidor é a fonte da verdade.</p>
-            <p class="project-desc">Autenticação com JWT, carrinho persistente que se junta à conta no login e
+            <p class="project-lead" data-i18n="violetLead">E-commerce full stack onde o servidor é a fonte da verdade.</p>
+            <p class="project-desc" data-i18n="violetDescription">Autenticação com JWT, carrinho persistente que se junta à conta no login e
               checkout para convidados e clientes. O total do pedido é calculado no
               servidor, nunca confiando no preço enviado pelo navegador.</p>
             <ul class="project-points">
-              <li>Idempotência com <code>Idempotency-Key</code>: reenvio ou clique duplo não gera dois pedidos.</li>
-              <li>Detecta produto removido ou preço alterado entre o carrinho e a compra.</li>
-              <li>Encontrei e corrigi uma falha IDOR em rotas do carrinho.</li>
-              <li>Mais de 50 testes no back-end (Pytest) e Jest no front.</li>
+              <li data-i18n="violetPointIdempotency">Idempotência com <code>Idempotency-Key</code>: reenvio ou clique duplo não gera dois pedidos.</li>
+              <li data-i18n="violetPointPrice">Detecta produto removido ou preço alterado entre o carrinho e a compra.</li>
+              <li data-i18n="violetPointIdor">Encontrei e corrigi uma falha IDOR em rotas do carrinho.</li>
+              <li data-i18n="violetPointTests">Mais de 50 testes no back-end (Pytest) e Jest no front.</li>
             </ul>
             <p class="project-stack">Stack: React · FastAPI · SQLAlchemy · PostgreSQL · JWT · Pytest · Jest</p>
-            <p class="project-notice">A loja é fictícia e não processa pagamentos reais. No primeiro acesso, a API
+            <p class="project-notice" data-i18n="violetNotice">A loja é fictícia e não processa pagamentos reais. No primeiro acesso, a API
               pode levar cerca de um minuto para acordar.</p>
             <div class="project-links">
-              <a href="https://violet-henna.vercel.app/" class="link-arrow">Veja funcionando →</a>
-              <a href="https://github.com/marinsnanadev/violet-ecommerce" class="link-arrow">Código →</a>
+              <a href="https://violet-henna.vercel.app/" class="link-arrow" data-i18n="viewLive">Veja funcionando →</a>
+              <a href="https://github.com/marinsnanadev/violet-ecommerce" class="link-arrow" data-i18n="viewCode">Código →</a>
             </div>
           </div>
         </article>
@@ -202,27 +218,27 @@
         <article class="project project--reverse reveal">
           <div class="project-media">
             <img class="project-video" src="./assets/mp4/analist-home.gif" loading="lazy"
-              alt="Demonstração animada do painel do agente no LiveDesk">
+              alt="Demonstração animada do painel do agente no LiveDesk" data-i18n-alt="liveDeskGifAlt">
           </div>
           <div class="project-body">
-            <p class="project-index">Projeto 02 / 05</p>
+            <p class="project-index" data-i18n="projectIndex2">Projeto 02 / 05</p>
             <div class="project-top">
               <h3>LiveDesk</h3>
-              <span class="project-status">código aberto</span>
+              <span class="project-status" data-i18n="statusOpenSource">código aberto</span>
             </div>
-            <p class="project-lead">Chat de suporte em tempo real, um mini Intercom.</p>
-            <p class="project-desc">Widget para o visitante e painel para o agente, com mensagens ao vivo, presença,
+            <p class="project-lead" data-i18n="liveDeskLead">Chat de suporte em tempo real, um mini Intercom.</p>
+            <p class="project-desc" data-i18n="liveDeskDescription">Widget para o visitante e painel para o agente, com mensagens ao vivo, presença,
               indicador de "digitando…" e status e prioridade de cada ticket. Cada mensagem é salva antes de ser
               transmitida, então o histórico nunca diverge do que foi exibido.</p>
             <ul class="project-points">
-              <li>Estado durável no banco e estado ao vivo (presença) só em memória.</li>
-              <li>Reconexão com backoff exponencial, sem perder o rascunho nem sobrescrever mensagens novas.</li>
-              <li>Tokens por conversa para visitantes e token de agente nas rotas e WebSockets.</li>
-              <li>Migrations com Alembic e CI que roda os testes em SQLite e PostgreSQL, com lint e build do front.</li>
+              <li data-i18n="liveDeskPointDurable">Estado durável no banco e estado ao vivo (presença) só em memória.</li>
+              <li data-i18n="liveDeskPointReconnect">Reconexão com backoff exponencial, sem perder o rascunho nem sobrescrever mensagens novas.</li>
+              <li data-i18n="liveDeskPointTokens">Tokens por conversa para visitantes e token de agente nas rotas e WebSockets.</li>
+              <li data-i18n="liveDeskPointCi">Migrations com Alembic e CI que roda os testes em SQLite e PostgreSQL, com lint e build do front.</li>
             </ul>
             <p class="project-stack">Stack: FastAPI · WebSockets · React · SQLAlchemy · Alembic · Pytest</p>
             <div class="project-links">
-              <a href="https://github.com/marinsnanadev/livedesk" class="link-arrow">Repositório →</a>
+              <a href="https://github.com/marinsnanadev/livedesk" class="link-arrow" data-i18n="viewRepository">Repositório →</a>
             </div>
           </div>
         </article>
@@ -230,32 +246,33 @@
         <!-- PriceWatcher -->
         <article class="project reveal">
           <div class="project-media project-media--diagram" role="img"
-            aria-label="Diagrama do fluxo: Celery Beat enfileira no Redis, o worker coleta o preço na loja e grava no banco">
+            aria-label="Diagrama do fluxo: Celery Beat enfileira no Redis, o worker coleta o preço na loja e grava no banco"
+            data-i18n-aria="priceWatcherDiagramAlt">
             <ol class="flow" aria-hidden="true">
-              <li><span>beat</span>a cada minuto, enfileira quem está na hora</li>
-              <li><span>redis</span>fila de tarefas</li>
-              <li><span>worker</span>coleta o preço (JSON-LD → HTML → meta tags)</li>
-              <li><span>postgres</span>histórico e registro de cada execução</li>
+              <li><span>beat</span><span data-i18n="flowBeat">a cada minuto, enfileira quem está na hora</span></li>
+              <li><span>redis</span><span data-i18n="flowRedis">fila de tarefas</span></li>
+              <li><span>worker</span><span data-i18n="flowWorker">coleta o preço (JSON-LD → HTML → meta tags)</span></li>
+              <li><span>postgres</span><span data-i18n="flowPostgres">histórico e registro de cada execução</span></li>
             </ol>
           </div>
           <div class="project-body">
-            <p class="project-index">Projeto 03 / 05</p>
+            <p class="project-index" data-i18n="projectIndex3">Projeto 03 / 05</p>
             <div class="project-top">
               <h3>PriceWatcher</h3>
-              <span class="project-status">código aberto</span>
+              <span class="project-status" data-i18n="statusOpenSource">código aberto</span>
             </div>
-            <p class="project-lead">Monitor de preços de Amazon e Mercado Livre com coleta agendada.</p>
-            <p class="project-desc">Você cadastra o link e o preço-alvo; o sistema acompanha o produto e guarda o
+            <p class="project-lead" data-i18n="priceWatcherLead">Monitor de preços de Amazon e Mercado Livre com coleta agendada.</p>
+            <p class="project-desc" data-i18n="priceWatcherDescription">Você cadastra o link e o preço-alvo; o sistema acompanha o produto e guarda o
               histórico para o gráfico. As coletas rodam em segundo plano, em fila, e erros de rede não derrubam nada.</p>
             <ul class="project-points">
-              <li>Scrapers em camadas, com plano B quando a loja muda o HTML.</li>
-              <li>Celery e Redis, com retry, backoff exponencial e jitter para não sobrecarregar as lojas.</li>
-              <li>Cada coleta fica registrada (status, origem do preço, duração, erro).</li>
-              <li>Cerca de 50 testes, com páginas reais salvas como fixtures.</li>
+              <li data-i18n="priceWatcherPointScrapers">Scrapers em camadas, com plano B quando a loja muda o HTML.</li>
+              <li data-i18n="priceWatcherPointRetries">Celery e Redis, com retry, backoff exponencial e jitter para não sobrecarregar as lojas.</li>
+              <li data-i18n="priceWatcherPointRecords">Cada coleta fica registrada (status, origem do preço, duração, erro).</li>
+              <li data-i18n="priceWatcherPointTests">Cerca de 50 testes, com páginas reais salvas como fixtures.</li>
             </ul>
             <p class="project-stack">Stack: FastAPI · Celery · Redis · SQLAlchemy · Alembic · React · Pytest</p>
             <div class="project-links">
-              <a href="https://github.com/marinsnanadev/pricewatcher" class="link-arrow">Repositório →</a>
+              <a href="https://github.com/marinsnanadev/pricewatcher" class="link-arrow" data-i18n="viewRepository">Repositório →</a>
             </div>
           </div>
         </article>
@@ -264,30 +281,30 @@
         <article class="project project--reverse reveal">
           <div class="project-media">
             <video class="project-video" autoplay muted loop playsinline preload="metadata"
-              aria-label="Demonstração em vídeo do Games Dashboard">
+              aria-label="Demonstração em vídeo do Games Dashboard" data-i18n-aria="gamesVideoAlt">
               <source src="./assets/mp4/games-dashboard-mp4.mp4" type="video/mp4">
             </video>
           </div>
           <div class="project-body">
-            <p class="project-index">Projeto 04 / 05</p>
+            <p class="project-index" data-i18n="projectIndex4">Projeto 04 / 05</p>
             <div class="project-top">
               <h3>Games Dashboard</h3>
-              <span class="project-status">no ar</span>
+              <span class="project-status" data-i18n="statusLive">no ar</span>
             </div>
-            <p class="project-lead">Dashboard de dados com IA que só explica números já calculados.</p>
-            <p class="project-desc">O back-end consulta a RAWG API e calcula as agregações (jogos por ano, nota média,
+            <p class="project-lead" data-i18n="gamesLead">Dashboard de dados com IA que só explica números já calculados.</p>
+            <p class="project-desc" data-i18n="gamesDescription">O back-end consulta a RAWG API e calcula as agregações (jogos por ano, nota média,
               ano de pico). A Gemini API recebe só esse resultado e narra o padrão, sem fazer contas, o que evita
               números inventados.</p>
             <ul class="project-points">
-              <li>Valida a resposta da IA antes de exibir; se vier inválida, o painel mostra erro com botão de nova tentativa.</li>
-              <li>Cache (1 h nos dados, 6 h nos insights), rate limit e timeout em toda chamada externa.</li>
-              <li>Cancela respostas antigas quando o filtro muda rápido.</li>
+              <li data-i18n="gamesPointValidation">Valida a resposta da IA antes de exibir; se vier inválida, o painel mostra erro com botão de nova tentativa.</li>
+              <li data-i18n="gamesPointCache">Cache (1 h nos dados, 6 h nos insights), rate limit e timeout em toda chamada externa.</li>
+              <li data-i18n="gamesPointCancel">Cancela respostas antigas quando o filtro muda rápido.</li>
             </ul>
             <p class="project-stack">Stack: React · Vite · Chart.js · Express · RAWG API · Gemini API</p>
-            <p class="project-notice">No primeiro acesso, o servidor pode levar cerca de um minuto para iniciar.</p>
+            <p class="project-notice" data-i18n="gamesNotice">No primeiro acesso, o servidor pode levar cerca de um minuto para iniciar.</p>
             <div class="project-links">
-              <a href="https://games-dashboard-self.vercel.app/" class="link-arrow">Veja funcionando →</a>
-              <a href="https://github.com/marinsnanadev/games-dashboard" class="link-arrow">Código →</a>
+              <a href="https://games-dashboard-self.vercel.app/" class="link-arrow" data-i18n="viewLive">Veja funcionando →</a>
+              <a href="https://github.com/marinsnanadev/games-dashboard" class="link-arrow" data-i18n="viewCode">Código →</a>
             </div>
           </div>
         </article>
@@ -296,22 +313,22 @@
         <article class="project reveal">
           <div class="project-media">
             <video class="project-video" autoplay muted loop playsinline preload="metadata"
-              aria-label="Demonstração em vídeo do site do Road Podglifos">
+              aria-label="Demonstração em vídeo do site do Road Podglifos" data-i18n-aria="roadPodglifosVideoAlt">
               <source src="./assets/mp4/roadpod.mp4" type="video/mp4">
             </video>
           </div>
           <div class="project-body">
-            <p class="project-index">Projeto 05 / 05</p>
+            <p class="project-index" data-i18n="projectIndex5">Projeto 05 / 05</p>
             <div class="project-top">
               <h3>Road Podglifos</h3>
-              <span class="project-status">em desenvolvimento</span>
+              <span class="project-status" data-i18n="statusInDevelopment">em desenvolvimento</span>
             </div>
-            <p class="project-lead">Site de um podcast sobre mangá e anime, feito para exercitar o visual.</p>
-            <p class="project-desc">Front-end em React com identidade própria (glow, glassmorphism, tipografia
+            <p class="project-lead" data-i18n="roadPodglifosLead">Site de um podcast sobre mangá e anime, feito para exercitar o visual.</p>
+            <p class="project-desc" data-i18n="roadPodglifosDescription">Front-end em React com identidade própria (glow, glassmorphism, tipografia
               customizada) e animações leves com GSAP.</p>
             <p class="project-stack">Stack: React · GSAP · CSS</p>
             <div class="project-links">
-              <a href="https://github.com/marinsnanadev/roadpod" class="link-arrow">Repositório →</a>
+              <a href="https://github.com/marinsnanadev/roadpod" class="link-arrow" data-i18n="viewRepository">Repositório →</a>
             </div>
           </div>
         </article>
@@ -322,8 +339,8 @@
     <!-- SKILLS -->
     <section class="skills" id="skills">
       <div class="section-head">
-        <p class="eyebrow reveal">Skills</p>
-        <h2 class="section-title reveal">Ferramentas que eu uso</h2>
+        <p class="eyebrow reveal" data-i18n="skillsEyebrow">Skills</p>
+        <h2 class="section-title reveal" data-i18n="skillsTitle">Ferramentas que eu uso</h2>
       </div>
 
       <div class="skills-table reveal">
@@ -336,19 +353,19 @@
           <p class="skills-items">Python · FastAPI · Node.js · Express · REST APIs · WebSockets · JWT · Celery</p>
         </div>
         <div class="skills-row">
-          <span class="skills-label">Banco de dados</span>
+          <span class="skills-label" data-i18n="skillsDatabases">Banco de dados</span>
           <p class="skills-items">PostgreSQL · MySQL · SQLite · MongoDB · SQLAlchemy · Alembic · Redis</p>
         </div>
         <div class="skills-row">
-          <span class="skills-label">Testes</span>
+          <span class="skills-label" data-i18n="skillsTesting">Testes</span>
           <p class="skills-items">Pytest · Jest · React Testing Library</p>
         </div>
         <div class="skills-row">
-          <span class="skills-label">Ferramentas &amp; deploy</span>
+          <span class="skills-label" data-i18n="skillsTools">Ferramentas &amp; deploy</span>
           <p class="skills-items">Git · GitHub · GitHub Actions · Vercel · Render · Linux · Scrum · Kanban</p>
         </div>
         <div class="skills-row">
-          <span class="skills-label">Também conheço</span>
+          <span class="skills-label" data-i18n="skillsAlso">Também conheço</span>
           <p class="skills-items">Angular · PHP · React Native · Android · Bootstrap · Power BI · WordPress</p>
         </div>
       </div>
@@ -356,9 +373,9 @@
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
-      <p class="eyebrow reveal">Contato</p>
-      <h2 class="contact-title reveal">Vamos conversar?</h2>
-      <p class="contact-desc reveal">
+      <p class="eyebrow reveal" data-i18n="contactEyebrow">Contato</p>
+      <h2 class="contact-title reveal" data-i18n="contactTitle">Vamos conversar?</h2>
+      <p class="contact-desc reveal" data-i18n="contactDescription">
         Estou buscando minha próxima oportunidade como desenvolvedora full stack. Me escreva por e-mail ou LinkedIn.
       </p>
       <a href="mailto:giannamarins@gmail.com" class="contact-email reveal">giannamarins@gmail.com</a>
@@ -372,9 +389,9 @@
   </main>
 
   <footer class="footer">
-    <p class="footer-colophon">Feito à mão, sem template — HTML, CSS e JavaScript puro. Tipografia: Fraunces,
+    <p class="footer-colophon" data-i18n-html="footerColophon">Feito à mão, sem template — HTML, CSS e JavaScript puro. Tipografia: Fraunces,
       Instrument Sans e Space Mono. © <span id="year"></span> Gianna Marins.</p>
-    <span class="margin-note margin-note--footer" aria-hidden="true">valeu por chegar até aqui.</span>
+    <span class="margin-note margin-note--footer" aria-hidden="true" data-i18n="footerNote">valeu por chegar até aqui.</span>
   </footer>
 
   <script src="script.js"></script>
